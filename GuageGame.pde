@@ -16,6 +16,10 @@ public class GuageGame extends State {
   
   int winTime = 5000;
   
+  public void setup () {
+    start();
+  }
+  
   public void start () {
     
     guageLevel.clear();

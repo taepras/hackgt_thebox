@@ -7,7 +7,7 @@ import ddf.minim.ugens.*;
 import processing.serial.*;
 
 
-boolean enableSerial = false;
+boolean enableSerial = true;
 
 
 
@@ -93,14 +93,15 @@ void setup() {
   gotoState(0);
   
   if (enableSerial)
-    myPort = new Serial(this, Serial.list()[0], 9600);
-  while (!enableSerial && myPort != null && myPort.available() > 0) {
+    myPort = new Serial(this, "COM3", 9600);
+  println(myPort);
+  while (enableSerial && myPort != null && myPort.available() > 0) {
     myPort.write("HackGT Horizons 2020\n");
   }
 }
 
 void draw() {
-  while (!enableSerial && myPort != null && myPort.available() > 0) {
+  while (enableSerial && myPort != null && myPort.available() > 0) {
     //myPort.write("HackGT Horizons 2020\n");
     String in = myPort.readStringUntil('\n');
     if (in != null && in.trim().length() > 0) {
@@ -167,16 +168,20 @@ void draw() {
 void keyPressed (String in) {
   
   
-  if (in.trim().equals("P0U") || in.trim().equals("P0D")) {
-    isUpsideDown = !isUpsideDown;
+  if (in.trim().equals("P0U")) {
+    PARTAY = true;
+  }
+  
+  if (in.trim().equals("P0D")) {
+    PARTAY = false;
   }
   
   if (in.trim().equals("L3U")) {
-    PARTAY = false;
+    isUpsideDown = true;
   }
   
   if (in.trim().equals("L3D")) {
-    PARTAY = false;
+    isUpsideDown = false;
   }
   
   if (currentState == 0) {
@@ -220,8 +225,10 @@ void keyPressed() {
       SFX.decrementSoundPackage();
     }
     else if(key == '/'){
-      println("!!!!");
       isUpsideDown = !isUpsideDown;
+    }
+    else if(key == '.'){
+      PARTAY = !PARTAY;
     }
     
   if (currentState == 0) {
