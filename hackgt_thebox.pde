@@ -7,6 +7,10 @@ import ddf.minim.ugens.*;
 import processing.serial.*;
 
 
+boolean enableSerial = false;
+
+
+
 Serial myPort; 
 
 Minim minim;
@@ -41,7 +45,6 @@ int screenH = 84;
 
 boolean isUpsideDown = false;
 boolean PARTAY = false;
-boolean enableSerial = false;
 
 void settings() {
   size(1200, 800);

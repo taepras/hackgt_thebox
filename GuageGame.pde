@@ -152,7 +152,7 @@ public class GuageGame extends State {
       guageLevel.set(0, constrain(guageLevel.get(0) + guageStep.get(0), 0, guageMax.get(0)));
     } else if (s.charAt(1) == '1') {
       guageLevel.set(1, constrain(guageLevel.get(1) + guageStep.get(1), 0, guageMax.get(1)));
-    } else if (s.charAt(1) == '2') {
+    } else if (s.charAt(1) == '2' || s.charAt(1) == '3') {
       guageLevel.set(2, constrain(guageLevel.get(2) + guageStep.get(2), 0, guageMax.get(2)));
     }
   }

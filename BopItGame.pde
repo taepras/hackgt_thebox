@@ -147,8 +147,10 @@ public class BopItGame extends State{
       doAction("pull");
     } else if (s.charAt(0) == 'H') {
       doAction("twist");
-    } else if (s.charAt(2) == 'D' || s.charAt(2) == 'H') {
+    } else if (s.charAt(0) == 'D' || s.charAt(2) == 'H' || s.charAt(0) == 'F' || s.charAt(0) == 'G' || s.charAt(0) == 'I' || s.charAt(0) == 'K' || s.charAt(0) == 'L' || s.charAt(0) == 'M' || s.charAt(0) == 'O') {
       doAction("bop");
+    } else if (s.charAt(0) == 'P') {
+      doAction("flick");
     }
   }
   

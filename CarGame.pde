@@ -110,9 +110,16 @@ public class CarGame extends State {
     }
   }
   
-  public void keyPressed(String k) {
-    
-    
+  public void keyPressed(String s) {
+    if (s.charAt(2) == 'L') {
+      playerCarLane = max(playerCarLane - 1, 0);
+    } else if (s.charAt(2) == 'R') {
+      playerCarLane = min(playerCarLane + 1, nLanes - 1);
+    } else if (s.charAt(1) == '0') {
+      playerCarLane = max(playerCarLane - 1, 0);
+    } else if (s.charAt(1) == '1') {
+      playerCarLane = min(playerCarLane + 1, nLanes - 1);
+    }
   }
   
   public void drawCar(PGraphics pg, int lane, int y, boolean isPlayer) {

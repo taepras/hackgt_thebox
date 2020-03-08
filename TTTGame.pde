@@ -177,7 +177,7 @@ public class TTTGame extends State {
       cursorY++;
     } else if (s.charAt(2) == 'R' || (s.charAt(1) == '1' && s.charAt(2) == 'D')) {
       cursorX++;
-    } else if (s.equals("I0H")) {
+    } else if (s.charAt(2) == 'H') {
       placeToken(true, cursorX, cursorY);
     }
     
