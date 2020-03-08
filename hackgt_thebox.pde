@@ -45,7 +45,7 @@ boolean enableSerial = false;
 
 void settings() {
   size(1200, 800);
-  //fullScreen();
+  fullScreen();
   noSmooth();
 }
 

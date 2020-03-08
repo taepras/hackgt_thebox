@@ -82,7 +82,7 @@ public class TTTGame extends State {
     pg.stroke(39, 41, 32);
     pg.rect(screenX + paddingX, screenY + screenHeight - paddingY, barWidth, barHeight);
     
-    pg.fill(0);
+    pg.fill(39, 41, 32);
     
     float timeLeftRatio = 1 - (float)(t - lastTurnTime) / turnTimeout;
     pg.rect(screenX + paddingX + barWidth * (1 - timeLeftRatio), screenY + screenHeight - paddingY, barWidth * timeLeftRatio, barHeight);
